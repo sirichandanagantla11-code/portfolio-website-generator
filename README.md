@@ -1,3 +1,4 @@
+ HEAD
 # Portfolio Website Generator
 
 A beginner-friendly full-stack app that lets you create a portfolio preview, download it as HTML, and save/retrieve portfolios in Supabase PostgreSQL.
@@ -51,3 +52,6 @@ If you change `app.js`, `node --watch` restarts the server. Press `Ctrl+C` to st
 - Saving/loading/deleting requires correct Supabase credentials and the SQL schema.
 - This starter app is for local learning. Before public deployment, add authentication, per-user authorization, rate limiting, and stronger validation. Do not expose the database secret key in frontend code.
 - The starter API currently has no authentication. Do not deploy it publicly as-is.
+
+# portfolio-website-generator
+ e3bcd0558ae989a8d21fe5e5031f8ba7e88bed4a
