@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create and save your professional portfolio website.">
+  <title>Portfolio Studio | Website Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">P</span> Portfolio Studio</a>
+    <a class="top-link" href="#saved">My Portfolios ↗</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">YOUR CAREER, YOUR STORY</span>
+      <h1>Build a portfolio that <span>stands out.</span></h1>
+      <p>Turn your skills, education, and projects into a professional portfolio.
+        Fill in your details, preview your website, and save it.</p>
+    </section>
+
+    <div class="workspace">
+      <section class="panel editor">
+        <div class="panel-heading">
+          <div><span class="step">STEP 01</span><h2>Your information</h2></div>
+          <span class="live-dot">● Ready to create</span>
+        </div>
+
+        <form id="portfolioForm">
+          <h3>Personal details</h3>
+          <div class="field-grid">
+            <label>Full name *
+              <input name="name" required maxlength="100" placeholder="e.g. Alex Johnson">
+            </label>
+            <label>Professional title *
+              <input name="title" required maxlength="150" placeholder="e.g. ECE Student & Aspiring Engineer">
+            </label>
+          </div>
+          <label>Email address
+            <input name="email" type="email" maxlength="254" placeholder="you@example.com">
+          </label>
+          <label>About you
+            <textarea name="bio" rows="4" maxlength="3000" placeholder="Introduce yourself, your interests, and your goals..."></textarea>
+          </label>
+          <label>Profile image URL (optional)
+            <input name="photo" type="url" maxlength="1000" placeholder="https://example.com/photo.jpg">
+          </label>
+
+          <h3>Skills & education</h3>
+          <label>Skills (separate with commas)
+            <input name="skills" placeholder="C, HTML, CSS, Electronics">
+          </label>
+          <label>Education (one entry per line)
+            <textarea name="education" rows="3" placeholder="B.Tech ECE — College name — 2026–2030"></textarea>
+          </label>
+
+          <h3>Projects</h3>
+          <div id="projectsContainer"></div>
+          <button class="btn btn-secondary" type="button" id="addProject">+ Add another project</button>
+
+          <h3>Social links</h3>
+          <div class="field-grid">
+            <label>LinkedIn URL
+              <input name="linkedin" type="url" maxlength="1000" placeholder="https://linkedin.com/in/username">
+            </label>
+            <label>GitHub URL
+              <input name="github" type="url" maxlength="1000" placeholder="https://github.com/username">
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Generate portfolio ↗</button>
+            <button class="btn btn-secondary" type="reset">Clear form</button>
+          </div>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="panel preview-panel" id="previewSection">
+        <div class="panel-heading">
+          <div><span class="step">STEP 02</span><h2>Live preview</h2></div>
+          <span class="preview-tag">PORTFOLIO</span>
+        </div>
+        <div id="preview" class="portfolio-preview">
+          <div class="preview-placeholder">
+            <div class="placeholder-icon">✦</div>
+            <h2>Your story starts here.</h2>
+            <p>Fill in the form and click Generate portfolio to see your personal website.</p>
+          </div>
+        </div>
+        <div class="preview-actions">
+          <button class="btn btn-primary" id="savePortfolio" disabled>Save to database</button>
+          <button class="btn btn-secondary" id="downloadPortfolio" disabled>Download HTML</button>
+        </div>
+        <p class="hint">Saving requires a working Supabase connection.</p>
+      </section>
+    </div>
+
+    <section class="panel saved-section" id="saved">
+      <div class="panel-heading">
+        <div><span class="step">STEP 03</span><h2>Saved portfolios</h2></div>
+        <button class="btn btn-secondary" id="refreshSaved">↻ Refresh</button>
+      </div>
+      <p class="hint">Load a saved portfolio or delete one from the database.</p>
+      <div id="savedList" class="saved-list"><p class="hint">Click Refresh to load saved portfolios.</p></div>
+    </section>
+
+    <footer><p>Portfolio Studio · Built with HTML, CSS, JavaScript, Express & Supabase</p></footer>
+  </main>
+</body>
+</html>
